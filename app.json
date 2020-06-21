@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "PomodoroTodo",
-    "slug": "PomodoroTodo",
+    "name": "pomodoro",
+    "slug": "snack-f4f4f4cf-2523-4d5d-be59-99d65f4ba70c",
     "platforms": [
       "ios",
       "android",
@@ -23,6 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "project"
   }
 }

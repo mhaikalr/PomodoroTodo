@@ -1,19 +1,51 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import Constants from 'expo-constants';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-export default function App() {
+// You can import from local files
+import FocusScreen from './components/FocusScreen';
+import DashboardScreen from './components/DashboardScreen';
+
+// or any pure javascript modules available in npm
+import { Card } from 'react-native-paper';
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={styles.mainContainer}>
+      <AppContainer />
     </View>
   );
 }
 
+const AppNavigator = createSwitchNavigator(
+  {
+    dashboardScreen: DashboardScreen,
+    focusScreen: FocusScreen,
+  },
+  {
+    intialRouteName: 'focusScreen',
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    // paddingTop: Constants.statusBarHeight,
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
   },
 });
+
+export default App;
