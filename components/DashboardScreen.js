@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   View,
@@ -8,11 +8,11 @@ import {
   TouchableOpacity,
   TouchableHighlight,
   SafeAreaView,
-} from 'react-native';
-import FocusScreen from './FocusScreen';
-import TaskList from './TaskList';
-import { Ionicons, MaterialIcons } from 'react-native-vector-icons';
-import Icon from 'react-native-vector-icons/FontAwesome';
+} from "react-native";
+import FocusScreen from "./FocusScreen";
+import TaskList from "./TaskList";
+import { Ionicons, MaterialIcons } from "react-native-vector-icons";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 class DashboardScreen extends React.Component {
   render() {
@@ -20,18 +20,22 @@ class DashboardScreen extends React.Component {
       <View style={styles.rootContainer}>
         <View style={styles.headerRootContainer}>
           <ImageBackground
-            source={require('../assets/background.jpg')}
+            source={require("../assets/background.jpg")}
             style={styles.headerBackground}
-            resizeMode='stretch'>
+            resizeMode="stretch"
+          >
             <Text style={styles.headerFont}>My Tasks</Text>
             <Text style={styles.dateFont}>{currentDate}</Text>
           </ImageBackground>
         </View>
         <View style={styles.bodyRootContainer}>
           <SafeAreaView style={styles.taskListContainer}>
-            <TaskList />
+            <TaskList navigation={this.props.navigation} />
           </SafeAreaView>
-          <TouchableOpacity style={styles.floatingButton} >
+          <TouchableOpacity
+            style={styles.floatingButton}
+            onPress={() => this.props.navigation.navigate("AddTaskScreen")}
+          >
             <Icon name="plus" size={20} color="#d8dfeb" />
           </TouchableOpacity>
         </View>
@@ -43,9 +47,9 @@ class DashboardScreen extends React.Component {
 // to refactor
 const currentDate =
   new Date().getDate() +
-  '-' +
+  "-" +
   (new Date().getMonth() + 1) +
-  '-' +
+  "-" +
   new Date().getFullYear();
 
 const styles = StyleSheet.create({
@@ -57,52 +61,52 @@ const styles = StyleSheet.create({
   },
   headerBackground: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end",
   },
   headerFont: {
     fontSize: 40,
-    fontWeight: 'bold',
-    color: '#ffffff',
+    fontWeight: "bold",
+    color: "#ffffff",
     paddingLeft: 20,
     paddingBottom: 10,
   },
   dateFont: {
     fontSize: 18,
-    color: '#ffffff',
-    textAlign: 'right',
+    color: "#ffffff",
+    textAlign: "right",
     padding: 10,
   },
   bodyRootContainer: {
     flex: 3,
-    justifyContent: 'center',
-    backgroundColor: '#d8dfeb',
-    alignItems: 'center',
+    justifyContent: "center",
+    backgroundColor: "#d8dfeb",
+    alignItems: "center",
   },
   taskListContainer: {
-    justifyContent: 'center',
+    justifyContent: "center",
     flex: 1,
-    width: '100%',
+    width: "100%",
   },
   buttonContainer: {
-    width: '100%',
-    backgroundColor: 'rgba(0,0,0,0.0)',
-    justifyContent: 'center',
-    alignItems: 'flex-end',
+    width: "100%",
+    backgroundColor: "rgba(0,0,0,0.0)",
+    justifyContent: "center",
+    alignItems: "flex-end",
     paddingRight: 20,
     flex: 1,
   },
   floatingButton: {
     borderWidth: 1,
-    borderColor: '#a6a6a6',
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'absolute',
+    borderColor: "#a6a6a6",
+    alignItems: "center",
+    justifyContent: "center",
+    position: "absolute",
     bottom: 20,
     right: 20,
     height: 60,
     width: 60,
     borderRadius: 100,
-    backgroundColor: '#2e72ff',
+    backgroundColor: "#2e72ff",
   },
 });
 

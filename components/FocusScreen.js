@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   View,
@@ -6,17 +6,24 @@ import {
   Image,
   ImageBackground,
   SafeAreaView,
-} from 'react-native';
-import DashboardScreen from './DashboardScreen';
+  Button,
+} from "react-native";
+import DashboardScreen from "./DashboardScreen";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 class FocusScreen extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require('../assets/background.jpg')}
-        style={styles.background}>
+        source={require("../assets/phonebg.jpg")}
+        style={styles.background}
+      >
         <SafeAreaView>
           <Text style={styles.taskTitle}>Focus</Text>
+          <Button
+            title="Back"
+            onPress={() => this.props.navigation.navigate("DashboardScreen")}
+          />
         </SafeAreaView>
       </ImageBackground>
     );
@@ -27,13 +34,13 @@ const styles = StyleSheet.create({
   background: {
     flex: 1,
     // justifyContent: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   taskTitle: {
     fontSize: 40,
-    color: '#fff',
-    fontWeight: 'bold',
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
 

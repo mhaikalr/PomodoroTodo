@@ -22,7 +22,10 @@ class TaskList extends React.Component {
         <TouchableOpacity style={styles.itemRowCheckbox}>
           <Ionicons name="md-checkmark-circle" size={20} color="#a6a6a6" />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.itemRowText}>
+        <TouchableOpacity
+          style={styles.itemRowText}
+          onPress={() => this.props.navigation.navigate('FocusScreen')}
+        >
           <Text>{item.text}</Text>
         </TouchableOpacity>
       </View>

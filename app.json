@@ -1,12 +1,8 @@
 {
   "expo": {
-    "name": "pomodoro",
-    "slug": "snack-f4f4f4cf-2523-4d5d-be59-99d65f4ba70c",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "name": "Just Pomodoit",
+    "slug": "haikal-pomodoit",
+    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,12 +14,10 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
-    "description": "project"
+    "description": "Smartacademy: React Native 101"
   }
 }
