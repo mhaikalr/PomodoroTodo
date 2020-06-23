@@ -23,6 +23,7 @@ class FocusScreen extends React.Component {
           <Button
             title="Back"
             onPress={() => this.props.navigation.navigate("DashboardScreen")}
+            color="black"
           />
         </SafeAreaView>
       </ImageBackground>
