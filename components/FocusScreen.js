@@ -19,7 +19,11 @@ class FocusScreen extends React.Component {
         style={styles.background}
       >
         <SafeAreaView>
-          <Text style={styles.taskTitle}>Focus</Text>
+          <Text style={styles.taskTitle}>Countdown timer here</Text>
+          <Button
+            title="Start/stop timer"
+            color="black"
+          />
           <Button
             title="Back to dashboard"
             onPress={() => this.props.navigation.navigate("DashboardScreen")}
