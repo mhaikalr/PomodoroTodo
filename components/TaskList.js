@@ -68,10 +68,6 @@ const sections = [
           'Go to the very very very very very very very very very very very big supermarket',
       },
       { id: 1, text: 'Send email' },
-      { id: 4, text: 'Send email' },
-      { id: 5, text: 'Send email' },
-      { id: 6, text: 'Send email' },
-      { id: 7, text: 'Send email' },
     ],
   },
   {
@@ -79,12 +75,6 @@ const sections = [
     data: [
       { id: 2, text: 'Do laundry' },
       { id: 3, text: 'Collect dry cleaning' },
-      { id: 8, text: 'Do laundry' },
-      { id: 9, text: 'Collect dry cleaning' },
-      { id: 10, text: 'Do laundry' },
-      { id: 11, text: 'Collect dry cleaning' },
-      { id: 12, text: 'Do laundry' },
-      { id: 13, text: 'Collect dry cleaning' },
     ],
   },
 ];
