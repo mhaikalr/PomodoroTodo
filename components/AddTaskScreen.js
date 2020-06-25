@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Text,
   View,
@@ -10,11 +10,11 @@ import {
   SafeAreaView,
   Button,
   TextInput
-} from "react-native";
+} from 'react-native';
 
 class AddTaskScreen extends React.Component {
   state = {
-    taskToAdd: ""
+    taskToAdd: ''
   }
   handleTextChange = (inputText) => {
     this.setState({ taskToAdd: inputText })
@@ -25,16 +25,16 @@ class AddTaskScreen extends React.Component {
         <TextInput
           style={styles.textInput}
           onChangeText={this.handleTextChange}
-          placeholder="Enter your task here"
-          placeholderTextColor="blue"
+          placeholder='Enter your task here'
+          placeholderTextColor='blue'
         />
         <Button
-          title="Add task"
+          title='Add task'
           style={styles.button}
         />
         <Button
-          title="Back to Dashboard"
-          onPress={() => this.props.navigation.navigate("DashboardScreen")}
+          title='Back to Dashboard'
+          onPress={() => this.props.navigation.navigate('DashboardScreen')}
           style={styles.button}
         />
       </View>

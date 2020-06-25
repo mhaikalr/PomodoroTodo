@@ -20,7 +20,7 @@ class TaskList extends React.Component {
     return (
       <View style={styles.itemRowContainer}>
         <TouchableOpacity style={styles.itemRowCheckbox}>
-          <Ionicons name="md-checkmark-circle" size={20} color="#a6a6a6" />
+          <Ionicons name='md-checkmark-circle' size={20} color='#a6a6a6' />
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.itemRowText}

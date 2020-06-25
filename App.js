@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Text, View, StyleSheet, SafeAreaView } from "react-native";
-import Constants from "expo-constants";
-import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import * as React from 'react';
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import Constants from 'expo-constants';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 // You can import from local files
-import FocusScreen from "./components/FocusScreen";
-import DashboardScreen from "./components/DashboardScreen";
-import AddTaskScreen from "./components/AddTaskScreen";
+import FocusScreen from './components/FocusScreen';
+import DashboardScreen from './components/DashboardScreen';
+import AddTaskScreen from './components/AddTaskScreen';
 
 // or any pure javascript modules available in npm
-import { Card } from "react-native-paper";
+import { Card } from 'react-native-paper';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ const AppNavigator = createSwitchNavigator(
     AddTaskScreen,
   },
   {
-    initialRouteName: "DashboardScreen",
+    initialRouteName: 'AddTaskScreen',
   }
 );
 
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   paragraph: {
     margin: 24,
     fontSize: 18,
-    fontWeight: "bold",
-    textAlign: "center",
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   header: {
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
 });
 
