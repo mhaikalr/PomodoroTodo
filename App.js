@@ -26,7 +26,7 @@ const AppNavigator = createSwitchNavigator(
     AddTaskScreen,
   },
   {
-    initialRouteName: 'AddTaskScreen',
+    initialRouteName: 'DashboardScreen',
   }
 );
 

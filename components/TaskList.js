@@ -13,6 +13,28 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class TaskList extends React.Component {
+  state = {
+    sections: [
+      {
+        title: 'To-do',
+        data: [
+          {
+            id: 0,
+            text:
+              'Go to the very very very very very very very very very very very big supermarket',
+          },
+          { id: 1, text: 'Send email' },
+        ],
+      },
+      {
+        title: 'Completed',
+        data: [
+          { id: 2, text: 'Do laundry' },
+          { id: 3, text: 'Collect dry cleaning' },
+        ],
+      },
+    ],
+  };
   renderSectionHeader = ({ section }) => {
     return <Text style={styles.headerRowText}>{section.title}</Text>;
   };
@@ -42,44 +64,22 @@ class TaskList extends React.Component {
       />
     );
   };
+  extractKey = (item, index) => item.id;
   render() {
     return (
       <View style={styles.rootContainer}>
         <SectionList
           style={styles.rootContainer}
-          sections={sections}
+          sections={this.state.sections}
           renderItem={this.renderItem}
           renderSectionHeader={this.renderSectionHeader}
-          keyExtractor={extractKey}
+          keyExtractor={this.extractKey}
           ItemSeparatorComponent={this.renderSeparator}
         />
       </View>
     );
   }
 }
-
-const sections = [
-  {
-    title: 'To-do',
-    data: [
-      {
-        id: 0,
-        text:
-          'Go to the very very very very very very very very very very very big supermarket',
-      },
-      { id: 1, text: 'Send email' },
-    ],
-  },
-  {
-    title: 'Completed',
-    data: [
-      { id: 2, text: 'Do laundry' },
-      { id: 3, text: 'Collect dry cleaning' },
-    ],
-  },
-];
-
-const extractKey = (item, index) => item.id;
 
 const styles = StyleSheet.create({
   rootContainer: {
