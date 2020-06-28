@@ -24,11 +24,6 @@ class FocusScreen extends React.Component {
             title='Start/stop timer'
             color='black'
           />
-          <Button
-            title='Back to dashboard'
-            onPress={() => this.props.navigation.navigate('DashboardScreen')}
-            color='black'
-          />
         </SafeAreaView>
       </ImageBackground>
     );

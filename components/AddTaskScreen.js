@@ -26,16 +26,14 @@ class AddTaskScreen extends React.Component {
           style={styles.textInput}
           onChangeText={this.handleTextChange}
           placeholder='Enter your task here'
-          placeholderTextColor='blue'
+          placeholderTextColor='grey'
         />
         <Button
           title='Add task'
           style={styles.button}
-        />
-        <Button
-          title='Back to Dashboard'
-          onPress={() => this.props.navigation.navigate('DashboardScreen')}
-          style={styles.button}
+          onPress={() => {
+            this.props.navigation.goBack()
+          }}
         />
       </View>
     );
