@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import DashboardScreen from './DashboardScreen';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import CountDown from 'react-native-countdown-component';
+import { clockRunning } from 'react-native-reanimated';
 
 class FocusScreen extends React.Component {
   render() {
@@ -19,7 +21,16 @@ class FocusScreen extends React.Component {
         style={styles.background}
       >
         <SafeAreaView>
-          <Text style={styles.taskTitle}>Countdown timer here</Text>
+          <CountDown
+            until={5}
+            onFinish={() => alert('Time for a break!')}
+            timeToShow={['M', 'S']}
+            digitStyle={{ backgroundColor: '#FFF' }}
+            size={30}
+            timeLabelStyle={{ color: '#fff', fontWeight: 'bold' }}
+            digitTxtStyle={{ color: '#000999' }}
+            separatorStyle={{ color: '#fff' }}
+          />
           <Button
             title='Start/stop timer'
             color='black'
