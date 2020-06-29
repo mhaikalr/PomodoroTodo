@@ -3,9 +3,6 @@ import {
     Text,
     View,
     StyleSheet,
-    Image,
-    ImageBackground,
-    SafeAreaView,
     Button,
 } from 'react-native';
 import CountDown from 'react-native-countdown-component';
@@ -15,27 +12,37 @@ class CustomCountDown extends Component {
         super(props)
         this.state = {
             isRunning: false,
+            until: 5,
+            id: 0,
+            first: true
         }
     }
     render() {
         return (
-            <SafeAreaView>
+            <View>
                 <CountDown
-                    until={60 * 25}
-                    onFinish={() => alert('Time for a break!')}
+                    until={this.state.until}
+                    onFinish={() => { alert('Time for a break!') }}
                     timeToShow={['M', 'S']}
                     digitStyle={{ backgroundColor: '#FFF' }}
                     size={30}
                     timeLabelStyle={{ color: '#fff', fontWeight: 'bold' }}
                     digitTxtStyle={{ color: '#000999' }}
                     separatorStyle={{ color: '#fff' }}
+                    running={this.state.isRunning}
+                    id={this.state.id}
                 />
                 <Button
                     title='Start/stop timer'
                     color='black'
-                    onPress={() => { this.setState({ isRunning: !this.state.isRunning }) }}
+                    onPress={() => { this.setState({ isRunning: !this.state.isRunning, first: false }) }}
                 />
-            </SafeAreaView>
+                <Button
+                    title='Reset timer'
+                    color='black'
+                    onPress={() => { this.state.first ? console.log(this.state.id) : this.setState({ isRunning: false, until: 5, first: true, id: this.state.id + 1 }) }}
+                />
+            </View>
         )
     }
 };
