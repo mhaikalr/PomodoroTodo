@@ -13,17 +13,21 @@ import FocusScreen from './FocusScreen';
 import TaskList from './TaskList';
 import { Ionicons, MaterialIcons } from 'react-native-vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { FlatList } from 'react-native-gesture-handler';
 
 class DashboardScreen extends React.Component {
   state = {
+    currentNoOfTasks: 2,
     allTasks: [
       {
-        title: 'task0',
-        id: 0
+        key: 'task0',
+        id: 0,
+        isDone: false
       },
       {
-        title: 'task1',
-        id: 1
+        key: 'task1',
+        id: 1,
+        isDone: false
       }
     ],
   }
@@ -42,7 +46,11 @@ class DashboardScreen extends React.Component {
         </View>
         <View style={styles.bodyRootContainer}>
           <SafeAreaView style={styles.taskListContainer}>
-            <TaskList navigation={this.props.navigation} />
+            {/* <TaskList navigation={this.props.navigation} /> */}
+            <FlatList
+              data={this.state.allTasks}
+              renderItem={({ item }) => <Text>{item.key}</Text>}
+            />
           </SafeAreaView>
           <TouchableOpacity
             style={styles.floatingButton}
