@@ -15,6 +15,18 @@ import { Ionicons, MaterialIcons } from 'react-native-vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class DashboardScreen extends React.Component {
+  state = {
+    allTasks: [
+      {
+        title: 'task0',
+        id: 0
+      },
+      {
+        title: 'task1',
+        id: 1
+      }
+    ],
+  }
   render() {
     return (
       <View style={styles.rootContainer}>

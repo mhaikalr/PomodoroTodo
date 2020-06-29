@@ -13,28 +13,31 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 class TaskList extends React.Component {
-  state = {
-    sections: [
-      {
-        title: 'To-do',
-        data: [
-          {
-            id: 0,
-            text:
-              'Go to the very very very very very very very very very very very big supermarket',
-          },
-          { id: 1, text: 'Send email' },
-        ],
-      },
-      {
-        title: 'Completed',
-        data: [
-          { id: 2, text: 'Do laundry' },
-          { id: 3, text: 'Collect dry cleaning' },
-        ],
-      },
-    ],
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      sections: [
+        {
+          title: 'To-do',
+          data: [
+            {
+              id: 0,
+              text:
+                'Go to the very very very very very very very very very very very big supermarket',
+            },
+            { id: 1, text: 'Send email' },
+          ],
+        },
+        {
+          title: 'Completed',
+          data: [
+            { id: 2, text: 'Do laundry' },
+            { id: 3, text: 'Collect dry cleaning' },
+          ],
+        },
+      ]
+    }
+  }
   renderSectionHeader = ({ section }) => {
     return <Text style={styles.headerRowText}>{section.title}</Text>;
   };
