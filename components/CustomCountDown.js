@@ -12,7 +12,7 @@ class CustomCountDown extends Component {
         super(props)
         this.state = {
             isRunning: false,
-            until: 5,
+            until: 60 * 25,
             id: 0,
             first: true
         }
@@ -40,7 +40,7 @@ class CustomCountDown extends Component {
                 <Button
                     title='Reset timer'
                     color='black'
-                    onPress={() => { this.state.first ? console.log(this.state.id) : this.setState({ isRunning: false, until: 5, first: true, id: this.state.id + 1 }) }}
+                    onPress={() => { this.state.first ? console.log(this.state.id) : this.setState({ isRunning: false, until: 60 * 25, first: true, id: this.state.id + 1 }) }}
                 />
             </View>
         )
