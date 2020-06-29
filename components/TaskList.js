@@ -49,7 +49,7 @@ class TaskList extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.itemRowText}
-          onPress={() => this.props.navigation.navigate('FocusScreen')}
+          onPress={() => this.props.navigation.navigate('FocusScreen', { taskToFocus: item.text })}
         >
           <Text>{item.text}</Text>
         </TouchableOpacity>
