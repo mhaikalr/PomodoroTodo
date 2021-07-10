@@ -1,0 +1,14 @@
+Assumptions:
+1. Client's names are unique.
+2. Initial client database of Alice, Bob with initial balances (100, 80).
+3. Newly created client has zero balance.
+
+Client object
+- name
+- actualBalance
+- displayBalance
+
+Debt object
+- debtorName
+- creditorName
+- debtAmt
